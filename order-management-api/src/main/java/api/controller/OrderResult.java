@@ -1,9 +1,6 @@
 package api.controller;
 
 import api.domain.entities.object.Product;
-import api.domain.value.object.order.OrderNumber;
-
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -11,27 +8,24 @@ public class OrderResult {
     private int orderNumber;
     private Date orderDate;
     private String status;
-    private String productName;
-    private BigDecimal buyPrice;
+    private List<Product> products;
     private String customerName;
     private String phone;
     private String country;
     private String employeeEmail;
-    private List<Product> products;
 
-    public OrderResult(int orderNumber, Date orderDate, String employeeEmail, List<Product> products) {
+    public OrderResult(int orderNumber, Date orderDate, List<Product> products, String employeeEmail) {
         this.orderNumber = orderNumber;
         this.orderDate = orderDate;
-        this.employeeEmail = employeeEmail;
         this.products = products;
+        this.employeeEmail = employeeEmail;
     }
 
-    public OrderResult(int orderNumber, Date orderDate, String status, String productName, BigDecimal buyPrice, String customerName, String phone, String country, String employeeEmail) {
+    public OrderResult(int orderNumber, Date orderDate, String status, List<Product> products, String customerName, String phone, String country, String employeeEmail) {
         this.orderNumber = orderNumber;
         this.orderDate = orderDate;
         this.status = status;
-        this.productName = productName;
-        this.buyPrice = buyPrice;
+        this.products = products;
         this.customerName = customerName;
         this.phone = phone;
         this.country = country;
@@ -48,14 +42,6 @@ public class OrderResult {
 
     public String getStatus() {
         return status;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public BigDecimal getBuyPrice() {
-        return buyPrice;
     }
 
     public String getCustomerName() {

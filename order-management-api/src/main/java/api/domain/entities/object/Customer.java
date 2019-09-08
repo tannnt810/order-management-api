@@ -33,10 +33,11 @@ public class Customer {
         this.creditLimit = creditLimit;
     }
 
-    public Customer(CustomerNumber customerNumber, String customerName, String phone, Employee employee) {
+    public Customer(CustomerNumber customerNumber, String customerName, String phone, String country, Employee employee) {
         this.customerNumber = customerNumber;
         this.customerName = customerName;
         this.phone = phone;
+        this.country = country;
         this.employee = employee;
     }
 

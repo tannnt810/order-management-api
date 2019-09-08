@@ -1,10 +1,12 @@
 package api.domain.entities.object;
 
 import api.domain.value.object.product.ProductCode;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 
 public class Product {
+    @JsonIgnore
     private ProductCode productCode;
     private String productName;
     private String productLine;
@@ -27,8 +29,7 @@ public class Product {
         this.MSRP = MSRP;
     }
 
-    public Product(ProductCode productCode, String productName, BigDecimal buyPrice) {
-        this.productCode = productCode;
+    public Product(String productName, BigDecimal buyPrice) {
         this.productName = productName;
         this.buyPrice = buyPrice;
     }

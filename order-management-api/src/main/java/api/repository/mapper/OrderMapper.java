@@ -16,14 +16,11 @@ public class OrderMapper implements RowMapper<OrderModel> {
         int orderNumber = resultSet.getInt("orderNumber");
         Date orderDate = resultSet.getDate("orderDate");
         String status = resultSet.getString("status");
-//        String productName = resultSet.getString("productName");
-//        BigDecimal buyPrice = resultSet.getBigDecimal("buyPrice");
-//        String customerName = resultSet.getString("customerName");
-//        String phone = resultSet.getString("phone");
-//        String country = resultSet.getString("country");
+        String customerName = resultSet.getString("customerName");
+        String phone = resultSet.getString("phone");
+        String country = resultSet.getString("country");
         String employeeEmail = resultSet.getString("email");
 
-//        return new OrderModel(orderNumber, orderDate, status, productName, buyPrice, customerName, phone, country, employeeEmail);
-        return new OrderModel(orderNumber, orderDate, employeeEmail);
+        return new OrderModel(orderNumber, orderDate, status, customerName, phone, country, employeeEmail);
     }
 }

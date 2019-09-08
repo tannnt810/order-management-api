@@ -1,6 +1,5 @@
 package api.domain.entities.object;
 
-import api.domain.value.object.employee.Email;
 import api.domain.value.object.employee.EmployeeNumber;
 
 public class Employee {

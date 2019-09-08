@@ -61,7 +61,7 @@ public class OrderRepositoryImpl extends JdbcDaoSupport implements OrderReposito
     }
 
     private List<Product> getProductList(int orderId) {
-        String sql = "SELECT orderdetails.productCode, productName, buyPrice FROM orderdetails INNER JOIN products ON orderdetails.productCode = products.productCode" +
+        String sql = "SELECT productName, buyPrice FROM orderdetails INNER JOIN products ON orderdetails.productCode = products.productCode" +
                 " WHERE orderdetails.orderNumber = ?";
 
         List<ProductModel> productModelList = this.getJdbcTemplate().query(sql, productMapper, orderId);

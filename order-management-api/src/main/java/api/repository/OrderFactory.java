@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 public class OrderFactory {
     public Order toOrder(OrderModel orderModel) {
         OrderNumber orderNumber = new OrderNumber(orderModel.getOrderNumber());
-        Customer customer = new Customer(new CustomerNumber(1), "1", "1", new Employee(new EmployeeNumber(100), orderModel.getEmployeeEmail()));
+        Customer customer = new Customer(new CustomerNumber(orderModel.getCustomerNumber()), orderModel.getCustomerName(), orderModel.getPhone(), orderModel.getCountry(), new Employee(new EmployeeNumber(10000), orderModel.getEmployeeEmail()));
 
-        return new Order(orderNumber, orderModel.getOrderDate(), customer);
+        return new Order(orderNumber, orderModel.getOrderDate(), orderModel.getStatus(), customer);
     }
 
     public List<Order> toOrderList(List<OrderModel> orderModelList) {

@@ -13,15 +13,11 @@ public class Order {
     private String comments;
     private Customer customer;
 
-    public Order(OrderNumber orderNumber, Date orderDate, Customer customer) {
+    public Order(OrderNumber orderNumber, Date orderDate, String status, Customer customer) {
         this.orderNumber = orderNumber;
         this.orderDate = orderDate;
+        this.status = status;
         this.customer = customer;
-    }
-
-    public Order(OrderNumber orderNumber, Date orderDate) {
-        this.orderNumber = orderNumber;
-        this.orderDate = orderDate;
     }
 
     public OrderNumber getOrderNumber() {
